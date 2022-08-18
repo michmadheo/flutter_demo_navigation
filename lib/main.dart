@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'settings.dart';
+import 'account.dart';
 import 'home.dart';
 
-void main()=>runApp(const MyApp());
-
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Navigation Demo',
-      home: Home(),
-    );
-  }
-}
+void main()=>runApp(
+  MaterialApp(
+    routes: {
+      '/': (context){
+        return Home();
+      },
+      '/Account': (context){
+        return Account();
+      },
+      '/Settings': (context){
+        return Settings();
+      }
+    },
+    initialRoute: '/',
+  )
+);
